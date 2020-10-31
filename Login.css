@@ -26,7 +26,7 @@ body
 {
     float: middle;
     font-size: 30px;
-    border-bottom: 3px solid #c0000a;
+    border-bottom: 3px solid #000;
     margin-bottom: 30px;
     padding: 13px 0;
 }
@@ -37,7 +37,7 @@ body
     font-size: 20px;
     padding: 8px 0;
     margin: 8px 0;
-    border-bottom: 1px solid #c0000a;
+    border-bottom: 1px solid #000;
 }
 .textbox input
 {
@@ -67,7 +67,7 @@ span
 {
     width:100%;
     background: none;
-    border:2px solid #c0000a;
+    border:2px solid #000;
     color: black;
     padding:5px;
 }
