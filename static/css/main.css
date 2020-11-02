@@ -1,0 +1,26 @@
+#logo{
+
+}
+body{
+    background-color: #ebeff5;
+}
+
+#total-appointments{
+    background-color: #4cb4c7;
+}
+
+#app-done{
+    background-color: #7abecc;
+}
+
+#upcoming-apps{
+    background-color: #7CD1C0;}
+
+.form-control {
+    border: 0;
+    box-shadow:none;
+    border-color: white;
+}
+.mar{
+	margin-left:20px;
+}
