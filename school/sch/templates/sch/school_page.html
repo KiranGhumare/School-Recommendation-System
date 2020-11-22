@@ -1,0 +1,228 @@
+{% extends 'sch/main.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="page">
+	<div style="text-align: center;color: white;">
+		<h1 style="color: white;">{{item.school_name}}</h1>
+		<p>{{item.address}}</p>
+	</div>
+	
+	</div>
+	<div>
+	<nav>
+		<ul style="width: 70%;
+	margin: auto;
+	
+	background-color:#3498DB">
+			<li class="li">
+				<a href="#feat1" style="text-decoration-line: none; color: black;">Basic Info</a>
+			</li>
+			<li class="li">
+				<a href="#feat2"style="text-decoration-line: none; color: black;">Fee Structure </a>
+			</li>
+			<li class="li">
+				<a href="#feat3"style="text-decoration-line: none; color: black;">Contact</a> 
+			</li>
+		</ul>
+	</nav>
+	</div>
+	<div>
+	<div id="feat1" class="info" style="width: 70%;">
+		<p style="font-size: 2vw;"><b>Key Information</b></p>
+		<div style="height: 2px;width: 100px; background-color: red;"></div>
+		<div style="float:left;width: 50%;">
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/school-building.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Type of School</b></div>
+						<div><b>{{item.type_school}}</b></div>
+					</div>
+			</div>
+		<!-- <div style="height: 1px;background-color: black;width: 30%;"></div> -->
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/cash-.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Annual Fees</b></div>
+						<div><b>{{item.annual_fees}}</b></div>
+					</div>
+			</div>
+
+		<!-- <div style="height: 1px;background-color: black;width: 30%;"></div> -->
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/babys-room.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Min age of admission</b></div>
+						<div><b>{{item.min_age}}</b></div>
+					</div>
+			</div>
+		<!-- <div style="height: 1px;background-color: black;width: 30%;"></div> -->
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/conference-call.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Average Class Strength</b></div>
+						<div><b>{{item.avg_class_strength}}</b></div>
+					</div>
+			</div>
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/crowd.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>School Strength</b></div>
+						<div><b>{{item.school_strength}}</b></div>
+					</div>
+			</div>
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/ping-pong.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Indoor Sports</b></div>
+						<div><b>{{item.indoor_sports}}</b></div>
+					</div>
+			</div>
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/bus.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Transportation</b></div>
+						<div><b>{{item.transportation}}</b></div>
+					</div>
+			</div>
+			<br>
+		</div>
+		<div style="float:left;width: 50%;">
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/flat_round/64/000000/bookmark-ribbon.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Establishment Year</b></div>
+						<div><b>{{item.estd}}</b></div>
+					</div>
+			</div>
+		
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/easel.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Affiliation / Examination Board</b></div>
+						<div><b>{{item.board}}</b></div>
+					</div>
+			</div>
+		
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/bubbles/50/000000/school.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Grade</b></div>
+						<div><b>{{item.grade}}</b></div>
+					</div>
+			</div>
+		
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/emoji/48/000000/input-latin-letters-emoji.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Language of Intruction</b></div>
+						<div><b>{{item.medium}}</b></div>
+					</div>
+			</div>
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/plasticine/48/000000/outdoor-swimming-pool.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Swimming Pool</b></div>
+						<div><b>{{item.swimming_pool}}</b></div>
+					</div>
+			</div>
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/doodle/48/000000/air-conditioner.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>AC Classrooms</b></div>
+						<div><b>{{item.ac_classes}}</b></div>
+					</div>
+			</div>
+		<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/color/48/000000/sports-mode.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Outdoor Sports</b></div>
+						<div><b>{{item.outdoor_sports}}</b></div>
+					</div>
+			</div>
+			<br>
+		</div>
+		
+	</div>
+
+	<div class="info" id="feat2">
+		<p style="font-size: 2vw;"><b>Fees Details</b></p>
+		<div style="height: 2px;width: 100px; background-color: red;"></div>
+		<div>
+		
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/fluent/48/000000/money.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Other Fees</b></div>
+						<div><b>{{item.fees}}</b></div>
+					</div>
+			</div>
+		
+			
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/emoji/48/000000/money-bag-emoji.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;word-wrap: break-word;font-size: 1vw;"><b>Admission Fees</b></div>
+						<div style="word-wrap: break-word;font-size: 1vw;"><b>{{item.admission_fees}}</b></div>
+					</div>
+			
+		</div>
+		</div>
+	</div>
+	<div class="info" id="feat3">
+		<p style="font-size: 2vw;"><b>Contact Info</b></p>
+		<div style="height: 2px;width: 100px; background-color: red;"></div>
+
+		<div >
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/fluent/48/000000/phone.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;"><b>Phone Number 1</b></div>
+						<div><b>{{item.phone1}}</b></div>
+					</div>
+			</div>
+		</div>
+			<div >
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/fluent/48/000000/phone.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;word-wrap: break-word;font-size: 1vw;"><b>Phone Number 2</b></div>
+						<div style="word-wrap: break-word;font-size: 1vw;"><b>{{item.phone2}}</b></div>
+					</div>
+			</div>
+		</div>
+		<div >
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/fluent/48/000000/phone.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;word-wrap: break-word;font-size: 1vw;"><b>Phone Number 3</b></div>
+						<div style="word-wrap: break-word;font-size: 1vw;"><b>{{item.phone3}}</b></div>
+					</div>
+			</div>
+		</div>
+		<div >
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/fluent/48/000000/domain.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;word-wrap: break-word;font-size: 1vw;"><b>Website</b></div>
+						<div style="word-wrap: break-word;font-size: 1vw;"><b>{{item.website}}</b></div>
+					</div>
+			</div>
+		</div>
+		<div >
+			<div class="box" style="margin-left: 2%;margin-top: 2%;">
+				<div style="display: inline-block;float: left;padding-right: 15px;"><img src="https://img.icons8.com/fluent/48/000000/location-update.png"/></div>
+					<div style="display: inline-block;font-size: 1vw;">
+						<div style="padding-top: 5px;word-wrap: break-word;font-size: 1vw;"><b>Location</b></div>
+						<div style="word-wrap: break-word;font-size: 1vw;"><b>{{item.address}}</b></div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</div>
+<div style="width: 100%;height: 200px; background-color:#3498DB ">
+	<h2 style="color: white;">About US</h2>
+	<p style="color: white; font-size: 20px;">qwertyuioxcvbnasdfghujisdfghjkzvjkwazesxdrtfyghuisxedrcftvgybhunedrftvgybhunxecftvgybhnjxdrcftvgbhndcfvgbhnjmcrdfvtgbyhnujmexdcrfvtgbyhnujedcrfvtgbhnjmcfvgbhnujmiedcrfvtgybhunjim,dcrfvtgbyhnujdrcfvtgbyhnujsxedcrfvgbhnjmxsedcrfvtgybhn</p>
+</div>
+{% endblock %}
