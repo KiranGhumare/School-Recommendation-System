@@ -1,47 +1,56 @@
 {% extends 'sch/main.html' %}
 {% load static %}
 {% block content %}
-
-<!-- <img style="border: 2px solid black;margin-left:100px;margin-top: 50px; display:float;
-float:left;"src="{% static 'images/image19.png' %}">
-<div style="margin-top:200px;margin-left:700px; margin-right:50px;">
-<h2 style="color:#3C9ADD;">About Us</h2>
-<br>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus laoreet arcu, a molestie nisl lacinia mollis. Sed maximus nisi eget pulvinar iaculis. Proin venenatis ac ipsum id rutrum. Proin vitae ipsum vel erat efficitur convallis at sed augue. </p>
-<p>
-Sed lacinia aliquet nulla, a semper elit consequat vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lobortis, purus ut vulputate gravida, nulla ex pellentesque neque, sit amet vestibulum nunc odio maximus nisl. Proin pretium, quam a sodales vehicula, orci augue aliquam nisi, non eleifend magna ex condimentum dolor. </p>
+    	<nav class="navbar navbar-light" >
+  <form class="form-inline">
+  	<div style="margin-right: 30px;">
+  	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'category' %}">Day School</a>
+    <a class="dropdown-item" href="#">Play School</a>
+    <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+  </div>
 </div>
-
-<a href="#"><button style="position: absolute;top:500px;left:900px;" class=" btn btn-danger">Book an Appointment</button></a>
-<div style="margin-top:300px; margin-left: 100px;margin-right: 100px;">
-<h2 style="color:#2B1DEA;background-color:#3AE7C9; text-align: center;">SERVICES</h2></div>
+</div>
 <div>
-<img style="margin-left: 100px;margin-top: 50px;" src="{% static 'images/image21.png' %}">
-<img style="margin-left: 100px;margin-top: 50px;" src="{% static 'images/image24.png' %}">
-<img style="margin-left: 100px;margin-top: 50px;" src="{% static 'images/image25.png' %}">
+    <input class="form-control mr-sm-2" style="width: 300px;"  type="search" placeholder="Search your preferred location" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </div>
-<br>
-<h2 style="color:#2B1DEA;background-color:#3AE7C9; text-align: center;margin-left: 100px;margin-right: 100px;">WE CARE</h2></div>
-<img style="margin-top:100px;margin-left:1000px;float:right;margin-right: 100px;"src="{% static 'images/image5.png' %}">
-<div style="margin-left: 100px;position: absolute;top:1350px;">
-  <h2 style="color:#2B1DEA;">We Care</h2>
- 
-  <p style="margin-right: 900px;">
+  </form>
+</nav>
   
-  
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus laoreet arcu, a molestie nisl lacinia mollis. Sed maximus nisi eget pulvinar iaculis. Proin venenatis ac ipsum id rutrum. Proin vitae ipsum vel erat efficitur convallis at sed augue. 
-    
-    Sed lacinia aliquet nulla, a semper elit consequat vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lobortis, purus ut vulputate gravida, nulla ex pellentesque neque, sit amet vestibulum nunc odio maximus nisl. Proin pretium, quam a sodales vehicula, orci augue aliquam nisi, non eleifend magna ex condimentum dolor.
-  
-  
-</p>
 <br>
 <br>
-<div style="margin-top: 50px;"><h3>
-<span style="font-size:20px;"class="glyphicon glyphicon-earphone"> 12345678</span> <span></span></h3>
- <h3><span style="font-size:20px;"class="glyphicon glyphicon-envelope"> ertyu@gmail.com</span></h3> </div>
-</div>
+<hr style="color: black;">
+<h1 style="text-align: center;color: black;"> Browse By Category </h1>
+<br>
 
- -->
-<!-- <img style=" position:absolute; top:300px; left:400px;"src="{% static 'images/image12.png' %}"> -->
+<center>  
+       
+          
+        <div class="container"> 
+            <a  href="{% url 'category' %}" >
+               <div class="box" id="st-box" class="card" style="width: 25rem;">
+  <img src="{% static 'images/bg.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body" style="background-color: white;">
+    <p class="card-text" style="color:black;font-weight: bold; font-size: 25px;"> Day School</p>
+  </div>
+</div></a>
+            <a href="#" >
+               <div class="box" id="rd-box"class="card" style="width: 25rem;">
+  <img src="{% static 'images/bg.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body" style="background-color: white;">
+    <p class="card-text"style="color:black;font-weight: bold; font-size: 25px;">Play School</p>
+  </div>
+</div>
+            </a>
+           
+           
+        </div> 
+        </center> 
+
 {% endblock %}
+
