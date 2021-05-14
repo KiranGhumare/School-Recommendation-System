@@ -1,0 +1,128 @@
+{% extends 'sch/main.html' %}
+{% load static %}
+{% block content %}
+
+{#    <form action="{% url 'search_results' %}" method = "get">#}
+{#        <input name="q" type="text" placeholder="Search...">#}
+{#    </form>#}
+
+    	<nav class="navbar navbar-light" >
+  <form class="form-inline" action="{% url 'search_results' %}" method="get">
+  	<div style="margin-right: 30px;">
+  	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'category' %}">Day School</a>
+{#    <a class="dropdown-item" href="#href">Play School</a>#}
+    <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+  </div>
+</div>
+</div>
+<div>
+    <label for="area"></label>
+    <input name = "q" id="area" class="form-control mr-sm-2" style="width: 300px;"  type="search" placeholder="Search your preferred location" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+ <form id = "locForm" onsubmit="locFunction" action="{% url 'near_me' %}" method="get">
+
+        <input type="hidden" id="lat" name = "lat" value="19.242439,">
+        <input type="hidden" id="long" name = "long" value="73.120193">
+{#        <input type="button" onclick="locFunction()" value="Near Me">#}
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="locFunction()">Near Me</button>
+
+{#          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+    </form>
+
+</div>
+  </form>
+{#<div><form action="/your-name/" method="post">#}
+{#    {% csrf_token %}#}
+{#    {{ form }}#}
+{#<input id="id" type="button" placeholder="Near Me">#}
+{##}
+{#</form>#}
+
+{#        <a href="{% url 'near_me' %}" ><button class="btn btn-success" style="float: right;margin:0 20px 20px 0;">Near Me</button></a></span>#}
+
+</div>
+
+
+</nav>
+  
+<br>
+<br>
+<hr style="color: black;">
+<h1 style="text-align: center;color: black;"> Browse By Category </h1>
+<br>
+
+<center>  
+       
+          
+        <div class="container"> 
+            <a  href="{% url 'category' %}" >
+               <div class="box" id="st-box" class="card" style="width: 25rem;">
+  <img src="{% static 'images/bg.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body" style="background-color: white;">
+    <p class="card-text" style="color:black;font-weight: bold; font-size: 25px;"> Day School</p>
+  </div>
+</div></a>
+            <a href="#" >
+               <div class="box" id="rd-box"class="card" style="width: 25rem;">
+  <img src="{% static 'images/bg.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body" style="background-color: white;">
+    <p class="card-text"style="color:black;font-weight: bold; font-size: 25px;">Play School</p>
+  </div>
+</div>
+            </a>
+           
+           
+        </div> 
+        </center>
+
+
+<script>
+      var x = getElementById("lat")
+      var y = getElementById("long")
+      function locFunction(){
+      if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(showPosition)
+      }else {
+          alert("Sorry! It seems your browser does not support location")
+      }
+
+      }
+      function showPosition(position){
+          var x = position.coords.latitude;
+          var y = position.coords.longitude;
+
+          document.getElementById("lat").value  = x;
+          document.getElementById("long").value = y;
+
+          document.getElementById("locForm").submit();
+
+      }
+  </script>
+
+
+{% endblock %}
+
+{##}
+{#     <script>#}
+{#        var x= document.getElementById("location");#}
+{#        function getlocation() {#}
+{#            if(navigator.geolocation){#}
+{#                return navigator.geolocation.getCurrentPosition(showPosition)#}
+{#              }#}
+{#            else#}
+{#            {#}
+{#                 alert("Sorry! your browser is not supporting")#}
+{#             } }#}
+{##}
+{#         function showPosition(position){#}
+{#           var x = "Your current location is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " +    position.coords.longitude + ")";#}
+{#                    document.getElementById("location").innerHTML = x;#}
+{##}
+{##}
+{#         }#}
+{#    </script>#}

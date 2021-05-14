@@ -1,71 +1,101 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
+from django.contrib.gis.geos import Point
+from django.contrib.gis.db import models
+
 
 class Customer(models.Model):
-	GENDER=(('Male', 'Male'),
-		('Female','Female'),
-		('Other','Other')
-		)
-	user = models.OneToOneField(User, null=True,blank=True, on_delete=models.CASCADE)
-	first_name = models.CharField(max_length=200, null=True)
-	last_name = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200, null=True)
-	date_created= models.DateTimeField(auto_now_add=True, null=True)
-	phone = models.CharField(max_length=12, null=True)
-	gender = models.CharField(max_length=100,null=True, choices=GENDER)
-	age= models.CharField(max_length=200, null=True)
-	profile_pic=models.ImageField(default="profile_aBGztjN.png",null=True,blank=True)
-	# ap=models.ForeignKey(app_of_Patient,null=True,on_delete=SET_NULL)
-	
-	def __str__(self):
-		return self.user.username
+    GENDER = (('Male', 'Male'),
+              ('Female', 'Female'),
+              ('Other', 'Other')
+              )
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+    phone = models.CharField(max_length=12, null=True)
+    gender = models.CharField(max_length=100, null=True, choices=GENDER)
+    age = models.CharField(max_length=200, null=True)
+    profile_pic = models.ImageField(default="profile_aBGztjN.png", null=True, blank=True)
+    location = models.PointField(geography=True, default=Point(0.0, 0.0), srid=4326)
+
+    # ap=models.ForeignKey(app_of_Patient,null=True,on_delete=SET_NULL)
+
+    def __str__(self):
+        return self.user.username
 
 
-# class Doctor(models.Model):
-# 	STATUS=(('Active','Active'),('Inactive','Inactive'))
-# 	user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-# 	first_name = models.CharField(max_length=200, null=True)
-# 	last_name = models.CharField(max_length=200, null=True)
-# 	email = models.CharField(max_length=200, null=True)
-# 	date_created= models.DateTimeField(auto_now_add=True, null=True)
-# 	patient = models.ForeignKey(Patient, null=True, on_delete=models.SET_NULL)
-# 	profile_pic=models.ImageField(default="profile_aBGztjN.png",null=True,blank=True)
-# 	status = models.CharField(max_length=200, null=True, choices=STATUS)
-# 	dept=models.CharField(max_length=300,null=True)
-	
-# 	def __str__(self):
-# 		return self.user.username
+class School_info(models.Model):
+    school_name = models.CharField(max_length=1000, null=True)
+    gender_allowed = models.CharField(max_length=1000, null=True)
+    type_school = models.CharField(max_length=1000, null=True)
+    board = models.CharField(max_length=1000, null=True)
+    fees = models.CharField(max_length=1000, null=True)
+    grade = models.CharField(max_length=1000, null=True)
+    min_age = models.CharField(max_length=1000, null=True)
+    medium = models.CharField(max_length=1000, null=True)
+    avg_class_strength = models.CharField(max_length=1000, null=True)
+    estd = models.CharField(max_length=1000, null=True)
+    school_strength = models.CharField(max_length=1000, null=True)
+    swimming_pool = models.CharField(max_length=1000, null=True)
+    indoor_sports = models.CharField(max_length=1000, null=True)
+    ac_classes = models.CharField(max_length=1000, null=True)
+    transportation = models.CharField(max_length=1000, null=True)
+    outdoor_sports = models.CharField(max_length=1000, null=True)
+    annual_fees = models.CharField(max_length=1000, null=True)
+    admission_fees = models.CharField(max_length=1000, null=True)
+    phone1 = models.CharField(max_length=1000, null=True)
+    phone2 = models.CharField(max_length=1000, null=True)
+    phone3 = models.CharField(max_length=1000, null=True)
+    phone4 = models.CharField(max_length=1000, null=True)
+    address = models.CharField(max_length=1000, null=True)
+    location = models.PointField(geography=True, default=Point(0.0, 0.0), srid=4326)
+
+    def _str_(self):
+        return self.school_name
 
 
+class Contact(models.Model):
+    name = models.CharField(max_length=300, null=True)
+    email = models.CharField(max_length=300, null=True)
+    phone = models.CharField(max_length=20, null=True)
+    desc = models.CharField(max_length=1000, null=True)
 
-# class Appointment(models.Model):
-# 	STATUS = (
-# 			('Pending', 'Pending'),
-# 			('Completed', 'Completed')
-# 			)
-# 	patient = models.ForeignKey(Patient, null=True, on_delete=models.SET_NULL)
-# 	doctor = models.ForeignKey(Doctor, null=True, on_delete=models.SET_NULL)
-# 	date_created = models.DateTimeField(auto_now_add=True, null=True)
-# 	status = models.CharField(max_length=200, null=True, choices=STATUS) 
+    def __str__(self):
+        return self.name
 
 
-# # class app_of_Patient(models.Model):
-# # 	appo=models.ForeignKey(Appointments, null=True, on_delete=models.SET_NULL)
+class gender(models.Model):
+    name = models.CharField(max_length=300, null=True)
 
-# class Prescription(models.Model):
-# 	patient= models.ForeignKey(Patient, null=True, on_delete=models.SET_NULL)
-# 	doctor=models.ForeignKey(Doctor, null=True, on_delete=models.SET_NULL)
-# 	date_created=models.DateTimeField(auto_now_add=True,null=True)
-# 	prescri=models.CharField(max_length=1000, null=True)
-# 	symptoms=models.CharField(max_length=1000, null=True)
-	
+    def __str__(self):
+        return self.name
 
 
+class Board_allowed(models.Model):
+    name = models.CharField(max_length=300, null=True)
+
+    def __str__(self):
+        return self.name
 
 
-# class Contact(models.Model):
-# 	name=models.CharField(max_length=300, null=True)
-# 	email=models.CharField(max_length=300, null=True)
-# 	phone=models.CharField(max_length=20, null=True)
-# 	desc=models.CharField(max_length=1000, null=True)
+class Facility(models.Model):
+    name = models.CharField(max_length=300, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Area(models.Model):
+    area = models.CharField(max_length=300, null=True)
+    latitude = models.FloatField(max_length=300)
+    longitude = models.FloatField(max_length=300)
+    location = models.PointField(geography=True, default=Point(0.0, 0.0), srid = 4326)
+
+
+class Distance(models.Model):
+    dist = models.IntegerField()
+
+    def __str__(self):
+        return self.dist
